@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <%= form_for (@patient_background) do |f| %>
+      <% if @patient_background.errors.any? %>
+        <div id= "error_explanation">
+        <h2 class= "text-danger"><%= @patient_background.errors.count %> errors have been detected</h2>
+          <ul>
+            <% @patient_background.errors.full_messages.each do |msg| %>
+              <li class= "text-danger"><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+  </div>  <!-- row -->
+
+  <div class="row">
+    <div class="patient-background-info col-md-6 col-md-offset-3">
+    <% if @patient_background.nil? == false %>
+
+        <span class="badge badge-info">Your background info</span>
+          <div class="blockquote ">
+
+            <div class= "form-group" >
+              <%= f.label :Name %><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Birthday %><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%= f.date_select :birthday, :start_year => 1950, :end_year => 2020, :use_month_numbers => true, :include_blank => true, :date_separator => "/"%>
+                <span> Year/Month/Day </span>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Sex %><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%= f.select :sex, {"Male" => "male", "Female" => "female"} %>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Country %><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%# enumを定義して選択肢を作成。選択肢を変更したい場合はpatient_backgroundのモデルから修正 %>
+                <%= f.select :country, PatientBackground.countries.keys.to_a %>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Hight %><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%= f.number_field :hight, in: 50..250 %><span>cm</span>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Weight %><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%= f.number_field :weight, in: 30..150 %><span>kg</span>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Occupation %>
+              <div class="items_arrange">
+                <%= f.text_field :occupation, class:"form-control", placeholder:"Occupation" %>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Religion %>
+              <div class="items_arrange">
+                <%= f.text_field :religion, class:"form-control", placeholder:"Religion" %>
+              </div>
+            </div>
+            <div class= "form-group" >
+              <%= f.label :Notes %>
+              <div class="items_arrange">
+                <%= f.text_area :notes, class:"form-control", placeholder:"Notes" %>
+              </div>
+            </div>
+          </div>
+        <div class="row pull-right">
+          <%= link_to "Back", patient_backgrounds_path, class:"btn btn-default" %>
+          <%= f.submit 'Register', class: 'btn btn-info' %>
+        </div>
+
+      <% end %> <!-- form_for (@patient_background) do |f| -->
+    <% end %> <!-- if @patient_background.nil? == false -->
+
+    </div> <!-- patient-background-info -->
+  </div> <!-- row -->
+
+</div>  <!-- container -->
