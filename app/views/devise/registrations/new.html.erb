@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row sign-page">
+
+        <div class="card card-signup" data-background-color="blue">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+          <form class="form" method="" action="">
+
+            <div class="header text-center">
+              <h4 class="title title-up">Sign Up</h4>
+                <div class="social-line">
+                  <a href="#pablo" class="btn btn-neutral btn-facebook btn-icon btn-round">
+                    <i class="fa fa-facebook-square"></i>
+                  </a>
+                  <a href="#pablo" class="btn btn-neutral btn-twitter btn-icon btn-lg btn-round">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="#pablo" class="btn btn-neutral btn-google btn-icon btn-round">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+              <div class="input-group form-group-no-border">
+                <span class="input-group-addon">
+                  <i class="now-ui-icons users_circle-08"></i>
+                </span>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+              </div>
+
+              <div class="input-group form-group-no-border">
+                <span class="input-group-addon">
+                  <i class="now-ui-icons text_caps-small"></i>
+                </span>
+
+                <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password ( 6 characters minimum)"%>
+              </div>
+
+              <div class="input-group form-group-no-border">
+                <span class="input-group-addon">
+                  <i class="now-ui-icons ui-1_email-85"></i>
+                </span>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Password confirmation"%>
+              </div>
+
+            </div>
+
+            <div class="footer text-center">
+              <div class="actions">
+                <%= f.submit "Sign up" , class:"btn btn-neutral btn-round btn-lg "%>
+              </div>
+
+              <div class="col text-center">
+                <%= link_to "Log in", new_user_session_path, class:"btn btn-simple btn-round btn-white btn-lg" %>
+              </div>
+
+            </div>
+
+          <% end %>
+
+        </div>
+
+    </div>
+  </div>
+</div>
