@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+    <div class="page-title">
+      <h1>Pocket Karte</h1>
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="page-subtitle center-block text-center">
+
+<%# TODO: フラッシュメーッセージをデザインする %>
+        <p class="flash"><%= notice %><%= alert %></p> <%# devise ログイン後のフラッシュメッセージを表示 %>
+        <h1>Menus</h1>
+      </div>
+    </div>
+
+<%# TODO: menu-bottunの配置を微調整する %>
+    <div class="row">
+    <div class="menu-bottuns">
+
+      <div class="col-md-3 col-sm-6">
+        <div class="menu-bottun">
+          <i class="now-ui-icons users_single-02"></i>
+          <%= link_to "Background", patient_backgrounds_path, class:"btn btn-info btn-lg"%>
+          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your Background" data-content="Register your background infomation such as your name, birthday, where you from etc.">Explanation</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="menu-bottun">
+          <i class="now-ui-icons business_badge"></i>
+          <%= link_to "Medicine", root_path, class:"btn btn-info btn-lg"%>
+          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your Medicines" data-content="Register infomation for medicines you have been taking.">Explanation</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="menu-bottun">
+          <i class="now-ui-icons education_atom"></i>
+          <%= link_to "Allergy", root_path, class:"btn btn-info btn-lg"%>
+          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="your Allergies" data-content="Register infomation for allergies you have occured in the past.">Explanation</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="menu-bottun">
+          <i class="now-ui-icons health_ambulance"></i>
+          <%= link_to "Past Medical History", root_path, class:"btn btn-info btn-lg"%>
+          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your past medical histories" data-content="Register your past medical histories. You can register ICD-code as well.">Explanation</button>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+/* now-ui-kit.css にも以下の記述あり*/
+/* このコードを読み込むことで表示サイズを調整している*/
+.now-ui-icons {
+    display: inline-block;
+    font: normal normal normal 150px/1 'Nucleo Outline';
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+</style>
