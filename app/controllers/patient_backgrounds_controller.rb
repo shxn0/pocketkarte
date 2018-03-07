@@ -18,6 +18,7 @@ class PatientBackgroundsController < ApplicationController
   def create
     @patient_background = PatientBackground.new(patient_background_params)
     @patient_background.user_id = current_user.id
+
     if @patient_background.save
       redirect_to patient_backgrounds_path, notice:"Your registration has been compleated."
     else
@@ -37,7 +38,9 @@ class PatientBackgroundsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
+    @patient_background.destroy
+    redirect_to patient_backgrounds_path, notice:"Your registration has been deleted."
   end
 
   private
