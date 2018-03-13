@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :patient_background, dependent: :destroy
+  has_many :medicines, dependent: :destroy
 end

@@ -1,0 +1,13 @@
+// 一行目について
+// ("#medicines_area").html(htmlString)メソッドが基本形
+// #medicines_areaのHTML要素を取得してそこに引数で指定した文字列をセットしている
+
+// j render の jについて
+//  →  ActionView::Helpers::JavaScriptHelper#escape_javascriptのエイリアスメソッド
+//  →  ≒ 改行コード、シングルクオート、ダブルクオートをJavaScript用にエスケープしてくれるヘルパメソッド（のエイリアス）
+//  →  erb が Ruby コードとして解釈した文字列をJavaScriptで正しく扱えるようにエスケープしてくれる
+
+// 二行目について
+// val(““)でテキストの部分に空文字を代入することで入力したものが消えるようになっている
+// $("#medicines_area").html("<%= j(render 'index', { medicines: @medicine.user.medicines }) %>")
+// $(':text').val('')

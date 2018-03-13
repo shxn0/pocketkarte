@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :patient_backgrounds
+  resources :medicines
 
   root "top#index"
   get 'landing', to: 'top#landing'
