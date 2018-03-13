@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="row">
+
+    <%= form_for (@patient_background) do |f| %>
+
       <% if @patient_background.errors.any? %>
         <div id= "error_explanation">
         <h2 class= "text-danger"><%= @patient_background.errors.count %> errors have been detected</h2>
@@ -10,12 +12,12 @@
           </ul>
         </div>
       <% end %>
-  </div>  <!-- row -->
+
 
   <div class="row">
     <div class="patient-background-info col-md-6 col-md-offset-3">
 
-      <%= form_for (@patient_background) do |f| %>
+      <%#= form_for (@patient_background) do |f| %>
         <span class="badge badge-info">Your background info</span>
           <div class="blockquote">
 
@@ -95,27 +97,3 @@
     </div> <!-- patient-background-info -->
   </div> <!-- row -->
 </div> <!-- container -->
-
-
-<%# form_forはdivをまたいで使うとf.submitが効かなくなるためこの位置に配置 %>
-<%#
-  ## OK ##
-
-        <div class="A">
-          form_for
-            <div class="B">
-              <p>hogehoge</p>
-            </div>
-          f.submit
-        </div>
-
-  ## NG ##
-
-        <div class="A">
-          form_for
-        </div>
-          f.submit
-          <div class="B">
-            <p>hogehoge</p>
-          </div>
-                                                                    %>
