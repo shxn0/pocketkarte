@@ -31,16 +31,16 @@ class PatientBackgroundsController < ApplicationController
 
   def update
     @patient_background.update(patient_background_params)
-    if @patient_background.invalid?
-      redirect_to 'edit'
-    else
-      redirect_to patient_backgrounds_path
-    end
+      if @patient_background.invalid?
+        redirect_to 'edit'
+      else
+        redirect_to patient_backgrounds_path
+      end
   end
 
   def destroy
     @patient_background.destroy
-    redirect_to patient_backgrounds_path, notice:"Your registration has been deleted."
+    redirect_to patient_backgrounds_path, confirm:{data:"Are you sure to delete?"}, notice:"Your registration has been deleted."
   end
 
   private
