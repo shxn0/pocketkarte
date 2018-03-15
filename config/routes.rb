@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :patient_backgrounds
-  resources :medicines
+  resources :medicines do
+    collection do
+      post :confirm
+    end
+  end
 
   root "top#index"
   get 'landing', to: 'top#landing'

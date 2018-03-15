@@ -1,0 +1,38 @@
+<div class="medicine-lists col-md-4 col-md-offset-4">
+
+  <h3>Are you sure to send? </h3>
+
+    <%= form_for @medicine, :url => {:action => 'create'}, method:"POST" do |f| %>
+
+      <div class= "form-group">
+        <div class="items_arrange">
+        <%= f.label :medicine_name %>
+        <%= @medicine.medicine_name %>
+        </div>
+      </div>
+
+      <div class= "form-group">
+        <div class="items_arrange">
+          <%= image_tag @medicine.medicine_img %>
+        </div>
+      </div>
+
+        <%= f.hidden_field :medicine_name %>
+        <%= f.hidden_field :medicine_img, id: :medicine_img  %>
+        <%= f.hidden_field :medicine_img_cache %>
+        <%= f.hidden_field :user_id %>
+        <%= hidden_field_tag :"cache[medicine_img]", @medicine.medicine_img.cache_name %>
+        <%= f.submit "Register", class:'btn btn-info btn-md'%>
+
+    <% end %>
+
+    <%= form_for(@medicine, url: new_medicine_path, method:'get') do |f| %>
+      <%= f.hidden_field :medicine_name %>
+      <%= f.hidden_field :medicine_img, id: :medicine_img  %>
+      <%= f.hidden_field :medicine_img_cache %>
+      <%= f.hidden_field :user_id %>
+      <%= hidden_field_tag :"cache[medicine_img]", @medicine.medicine_img.cache_name %>
+      <%= f.submit "Back", name:"back", class: 'btn btn-default btn-md' %>
+    <% end %>
+
+</div>
