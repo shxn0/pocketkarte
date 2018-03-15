@@ -1,29 +1,38 @@
-  <h1>Please register medicines info </h1>
+  <!-- <h1>Please register medicines info </h1> -->
 
-  <%= form_for(medicine) do |f| %>
+  <%#= form_for(@medicine, url: choose_new_or_edit) do |f| %>
+  <%= form_for @medicine, :url => {:action => 'confirm'} do |f| %>
 
-    <% if medicine.errors.any? %>
+    <% if @medicine.errors.any? %>
       <div id= "error_explanation" >
-        <h2> <%= medicine.errors.count %>件のエラーがあります</h2>
+        <h2> <%= @medicine.errors.count %>件のエラーがあります</h2>
         <ul>
-          <%= medicine.errors.full_messages.each do |msg| %>
+          <%= @medicine.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
           <% end %>
         </ul>
       </div>
     <% end %>
 
-    <%= f.hidden_field :user_id %>
-    <div class="row">
+    <div class="medicine-form col-md-4">
       <div class= "form-group">
-      <div class="items_arrange">
-        <%= f.text_field :medicine_name, class:"form-control", placeholder:"Medicine name" %>
-        <%= f.hidden_field :medicine_img, class:"form-control", placeholder:"Medicine name" %>
+        <%= f.label :Medicine_name %><span class="required-item">*</span>
+        <div class="items_arrange">
+          <%= f.text_field :medicine_name, class:"form-control", placeholder:"Medicine name" %>
+        </div>
+      </div>
+
+      <div class= "form-group">
+        <div class="items_arrange">
+          <%= f.file_field :medicine_img, id: :medicine_img %>
+          <%= f.hidden_field :medicine_img_cache %>
+          <%= f.hidden_field :user_id %>
+        </div>
+      </div>
+
+      <div class="wrapper-bg-form-submit">
+        <%= f.submit 'Add', class: 'btn btn-info btn-sm' %>
       </div>
     </div>
 
-    <div class="wrapper-bg-form-submit">
-      <%= f.submit 'Add', class: 'btn btn-primary btn-sm' %>
-    </div>
   <% end %>
-</div>

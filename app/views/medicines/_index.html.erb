@@ -2,23 +2,21 @@
   <%# そのnilインスタンスをviewに表示させないために、unlessの条件式で表示するインスタンスを制御している %>
 
 
+<div class="medicine-lists col-md-8 col-md-offset-2">
+
   <% medicines.each do |medicine| %>
     <% unless medicine.id.nil? %>
 
-    <div class="row col-md-3">
+    <div class="col-xs-6 col-sm-4 col-md-3">
       <div class="panel panel-default">
         <div class="panel-body">
-          内服薬の画像
+          <%= image_tag medicine.medicine_img, class:"img-responsive" %>
         </div>
 
-        <!-- <ul class="list-group">
-          <li class="list-group-item">Start Date</li>
-        </ul> -->
-
         <div class="panel-footer">
-          <%= medicine[:medicine_name] %>
+          <strong><%= medicine[:medicine_name] %></strong>
           <span class="text-right">
-            <%= link_to "", medicine_path(medicine), method: :delete, class:"now-ui-icons ui-1_simple-remove" %></span>
+            <%= link_to "", medicine_path(medicine), method: :delete, data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
           </span>
       	</div>
       </div>
@@ -29,3 +27,4 @@
 
     <% end %>
   <% end %>
+</div>

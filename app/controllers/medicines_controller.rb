@@ -10,21 +10,33 @@ class MedicinesController < ApplicationController
   end
 
   def new
-    @medicine = Medicine.new
+    if params[:back]
+      @medicine = Medicine.new(medicine_params)
+    else
+      @medicine = Medicine.new
+    end
+  end
+
+  def confirm
+    @medicine = current_user.medicines.build(medicine_params)
+    render :new if @medicine.invalid?
   end
 
   def create
+    #etrieve_from_cache!メソッドでキャッシュから画像を復元して保存する
+    # params[:cache] => {"medicine_img"=>"1521100613-68352-0005-4586/moguo.jpg"}が格納されている
     @medicine = current_user.medicines.build(medicine_params)
-    # respond_to do |format|
-      if @medicine.save
-        redirect_to medicines_path
-        # format.html {redirect_to medicines_path }
-        # format.js {render :index}
-      else
-        render :index
-        # format.html {render :index}
-      end
-    # end
+    @medicine.medicine_img.retrieve_from_cache! params[:cache][:medicine_img]
+    if @medicine.save
+      redirect_to medicines_path
+    else
+      render :index
+    end
+  end
+
+  def update
+    @medicine.update(medicine_params)
+    redirect_to medicines_path
   end
 
   def destroy
