@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+
+      <div class="title">
+        <h1>allergy#index</h1>
+      </div>
+    </div>
+
+    <%= render partial: 'form', locals: { allergy: @allergy } %>
+
+    <div class="allergies_area">
+      <%= render partial: 'index', locals: { allergies: @allergies } %>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<%= form_for @allergy do |f| %>
+
+  <% if @allergy.errors.any? %>
+    <div id= "error_explanation" >
+      <h2> <%= @allergy.errors.count %>件のエラーがあります</h2>
+      <ul>
+        <%= @allergy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="allergy-form col-md-4">
+    <div class= "form-group">
+      <%= f.label :allergy_name %><span class="required-item">*</span>
+      <div class="items_arrange">
+        <%= f.text_field :allergy_name, class:"form-control", placeholder:"Allergy name" %>
+        <%= f.hidden_field :user_id %>
+      </div>
+    </div>
+
+    <div class="wrapper-bg-form-submit">
+      <%= f.submit 'Add', class: 'btn btn-info btn-sm' %>
+    </div>
+  </div>
+
+<% end %>

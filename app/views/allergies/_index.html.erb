@@ -1,0 +1,25 @@
+<%# indexアクションで@allergiesのインスタンス変数を生成しているため、nilのインスタンスがページ読み込みと同時に作成されてしまう。%>
+<%# そのnilインスタンスをviewに表示させないために、unlessの条件式で表示するインスタンスを制御している %>
+
+<div class="allergy-lists col-md-8 col-md-offset-2">
+
+  <% allergies.each do |allergy| %>
+    <% unless allergy.id.nil? %>
+
+    <div class="col-xs-6 col-sm-4 col-md-3">
+
+      <ul class="list-group">
+      	<li class="list-group-item">
+          <i class="now-ui-icons education_atom"><strong><%= allergy[:allergy_name] %></strong></i>
+          <span class="text-right">
+            <%= link_to "", allergy_path(allergy), method: :delete, data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
+          </span>
+        </li>
+      </ul>
+
+    </div>
+
+    <% end %>
+  <% end %>
+  
+</div>
