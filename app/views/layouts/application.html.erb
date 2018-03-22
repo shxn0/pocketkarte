@@ -54,6 +54,12 @@
               <%= link_to "Medicines", medicines_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
+              <%= link_to "Allergies", allergies_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Past medical History", past_medical_histories_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
               <% if user_signed_in? %>
                 <%= link_to "Account setting", edit_user_registration_path, class:"nav-link" %>
               <% else %>
