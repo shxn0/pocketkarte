@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  resources :allergies
+  resources :past_medical_histories
 
   root "top#index"
   get 'landing', to: 'top#landing'
