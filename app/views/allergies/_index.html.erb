@@ -3,23 +3,22 @@
 
 <div class="allergy-lists col-md-8 col-md-offset-2">
 
-  <% allergies.each do |allergy| %>
-    <% unless allergy.id.nil? %>
-
-    <div class="col-xs-6 col-sm-4 col-md-3">
+    <!-- <div class="col-xs-6 col-sm-4 col-md-3"> -->
 
       <ul class="list-group">
-      	<li class="list-group-item">
-          <i class="now-ui-icons education_atom"><strong><%= allergy[:allergy_name] %></strong></i>
-          <span class="text-right">
-            <%= link_to "", allergy_path(allergy), method: :delete, data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
-          </span>
-        </li>
+        <% allergies.each do |allergy| %>
+          <% unless allergy.id.nil? %>
+          	<li class="list-group-item">
+              <i class="now-ui-icons education_atom">&emsp;<strong><%= allergy[:allergy_name] %></strong></i>
+              <span class="text-right">
+                <%= link_to "", allergy_path(allergy), method: :delete, data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
+              </span>
+            </li>
+          <% end %>
+        <% end %>
+
       </ul>
 
-    </div>
+    <!-- </div> -->
 
-    <% end %>
-  <% end %>
-  
 </div>

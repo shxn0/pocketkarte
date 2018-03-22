@@ -6,9 +6,22 @@ class AllergiesController < ApplicationController
   end
 
   def create
-    @allergy.user_id = current_user.id
+    @allergy = current_user.allergies.build(allergy_params)
     @allergy.save
     redirect_to allergies_path
   end
+
+  def destroy
+    @allergy = Allergy.find(params[:id])
+    @allergy.destroy
+    redirect_to allergies_path
+  end
+
+
+  private
+
+    def allergy_params
+      params.require(:allergy).permit(:user_id, :allergy_name)
+    end
 
 end
