@@ -22,29 +22,29 @@
           <div class="blockquote">
 
             <div class= "form-group" >
-              <%= f.label :Name %><span class="required-item">*</span>
+              <%= f.label :name %><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Birthday %><span class="required-item">*</span>
+              <%= f.label :birthday %><span class="required-item">*</span>
               <div class="items_arrange">
-                <%= f.date_select :birthday, :start_year => 1950, :end_year => 2020, :use_month_numbers => true, :include_blank => true, :date_separator => "/"%>
-                <span> Year/Month/Day </span>
+                <%= f.date_select :birthday, :start_year => 1918, :end_year => 2020, :use_month_numbers => true, :include_blank => true, :date_separator => "/"%>
+                <p> Year/Month/Day </p>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Sex %><span class="required-item">*</span>
+              <%= f.label :sex %><span class="required-item">*</span>
               <div class="items_arrange">
-                <%= f.select :sex, {"Male" => "male", "Female" => "female"} %>
+                <%= f.select :sex, {"Male" => "Male", "Female" => "Female"} %>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Country %><span class="required-item">*</span>
+              <%= f.label :country %><span class="required-item">*</span>
               <div class="items_arrange">
                 <%# enumを定義して選択肢を作成。選択肢を変更したい場合はpatient_backgroundのモデルから修正 %>
                 <%= f.select :country, PatientBackground.countries.keys.to_a %>
@@ -52,35 +52,35 @@
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Hight %><span class="required-item">*</span>
+              <%= f.label :hight %><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= f.number_field :hight, in: 50..250 %><span>cm</span>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Weight %><span class="required-item">*</span>
+              <%= f.label :weight %><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= f.number_field :weight, in: 30..150 %><span>kg</span>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Occupation %>
+              <%= f.label :occupation %>
               <div class="items_arrange">
                 <%= f.text_field :occupation, class:"form-control", placeholder:"Occupation" %>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Religion %>
+              <%= f.label :religion %>
               <div class="items_arrange">
                 <%= f.text_field :religion, class:"form-control", placeholder:"Religion" %>
               </div>
             </div>
 
             <div class= "form-group" >
-              <%= f.label :Notes %>
+              <%= f.label :notes %>
               <div class="items_arrange">
                 <%= f.text_area :notes, class:"form-control", placeholder:"Notes" %>
               </div>

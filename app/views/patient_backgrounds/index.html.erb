@@ -27,7 +27,7 @@
           <div class="blockquote ">
 
             <div class= "form-group" >
-              <strong> Name </strong><span class="required-item">*</span>
+              <strong><%= @name %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @patient_background.name %>
               </div>
@@ -35,51 +35,59 @@
 
             <%# TODO:  現状はyear/month/dayと表示されるため、y年/m月/d日と表示するようにコードを変更する %>
             <div class= "form-group" >
-              <strong> Birthday </strong><span class="required-item">*</span>
+              <strong><%= @birthday %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @patient_background.birthday %>
-                <span> Year/Month/Day </span>
+                <p> Year-Month-Day </p>
+              </div>
+            </div>
+
+            <%# TODO: Age項目は生年月日から自動算出される設計でカラムに登録していないためView.ymlを参照して翻訳する必要がある %>
+            <div class= "form-group" >
+              <strong> Age </strong><span class="required-item">*</span>
+              <div class="items_arrange">
+                <%= @age_of_patient %>
               </div>
             </div>
 
             <div class= "form-group" >
-              <strong> Sex </strong><span class="required-item">*</span>
+              <strong><%= @sex %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @patient_background.sex %>
               </div>
             </div>
             <div class= "form-group" >
-              <strong> Country </strong><span class="required-item">*</span>
+              <strong><%= @country %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @patient_background.country %>
               </div>
             </div>
             <div class= "form-group" >
-              <strong> Hight </strong><span class="required-item">*</span>
+              <strong><%= @hight %></strong><span class="required-item">*</span>
               <div class="items_arrange">
-                <%= @patient_background.hight %>
+                <%= @patient_background.hight %>&nbsp;<span>cm</span>
               </div>
             </div>
             <div class= "form-group" >
-              <strong> Weight </strong><span class="required-item">*</span>
+              <strong><%= @weight %></strong><span class="required-item">*</span>
               <div class="items_arrange">
-                <%= @patient_background.weight %>
+                <%= @patient_background.weight %>&nbsp;<span>kg</span>
               </div>
             </div>
             <div class= "form-group" >
-              <strong> Occupation </strong>
+              <strong><%= @occupation %></strong>
               <div class="items_arrange">
                 <%= @patient_background.occupation %>
               </div>
             </div>
             <div class= "form-group" >
-              <strong> Religion </strong>
+              <strong><%= @religion %></strong>
               <div class="items_arrange">
                 <%= @patient_background.religion %>
               </div>
             </div>
             <div class= "form-group" >
-              <strong> Notes </strong>
+              <strong><%= @notes %></strong>
               <div class="items_arrange">
                 <%= @patient_background.notes %>
               </div>
