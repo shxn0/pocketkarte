@@ -1,0 +1,49 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+
+  activerecord:
+    models:
+      patient_background: "患者背景情報"
+      medicine: "内服薬"
+      allergy: "アレルギー"
+      past_medical_histories: "既往歴"
+
+    attributes:
+      patient_background:
+        name: "名前"
+        birthday: "生年月日"
+        sex: "性別"
+        country: "国籍"
+        hight: "身長"
+        weight: "体重"
+        occupation: "職業"
+        religion: "信仰"
+        notes: "備考"
+
+      past_medical_history:
+        icd_code: "ICD コード"
+        brain_disease_in_the_past: "過去に脳疾患を患ったことはありますか？"
+        heart_disease_in_the_past: "過去に心疾患を患ったことはありますか？"
+        surgery_in_the_past: "過去に手術を受けたことはありますか？"
+        hospitalized_in_the_past: "過去に入院したことはありますか？"
+        attending_to_a_hospital_now: "現在は通院中ですか？"
