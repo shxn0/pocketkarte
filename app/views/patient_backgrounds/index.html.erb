@@ -42,9 +42,9 @@
               </div>
             </div>
 
-            <%# TODO: Age項目は生年月日から自動算出される設計でカラムに登録していないためView.ymlを参照して翻訳する必要がある %>
+            <%# Age項目は生年月日から自動算出される設計でカラムに登録していないためView.ymlを参照して翻訳 %>
             <div class= "form-group" >
-              <strong> Age </strong><span class="required-item">*</span>
+              <strong><%= t('patient_background.index.age') %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @age_of_patient %>
               </div>
