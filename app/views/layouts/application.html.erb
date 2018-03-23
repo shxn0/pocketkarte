@@ -60,6 +60,9 @@
               <%= link_to "Past medical History", past_medical_histories_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
+              <%= link_to "Symptom", symptoms_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
               <% if user_signed_in? %>
                 <%= link_to "Account setting", edit_user_registration_path, class:"nav-link" %>
               <% else %>
