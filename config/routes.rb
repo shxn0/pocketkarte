@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :allergies
   resources :past_medical_histories
+  resources :symptoms
 
   root "top#index"
   get 'landing', to: 'top#landing'
