@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <h1>symptoms#index</h1>
+      </div>
+    </div>
+
+    <% if @symptom.blank? %>
+      <div class="row">
+        <div class="no-info-page col-md-10 col-md-offset-1">
+          <h2>Please register your symptoms.</h2>
+        </div>
+      </div>
+      <div class="row pull-right">
+        <%= link_to "Back", root_path, class:"btn btn-default" %>
+        <%= link_to 'Register', new_symptom_path, class: "btn btn-info" %>
+      </div>
+
+    <% else %>
+      <div class="row">
+        <div class="patient-symptom-info col-md-6 col-md-offset-3">
+          <span class="badge badge-info">Your symptom info</span>
+
+          <div class="review_of_system">
+            <div class="general">
+              <h3>General</h3>
+
+              <table class="table table-striped table-bordered">
+              <%# symptomモデルから取得した属性のハッシュ(@symptom_attributes)から %>
+              <%# キーのみの配列(@symptom_keys)を利用してハッシュの値を参照する %>
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %> <%# 演算子を <= にすると最後尾の要素が含まれてしまうためにエラーになる %>
+                  <tr>
+                    <td>
+                    <div class= "form-group" >
+                      <% key_name = @true_symptom_keys[i] %> <%# キーの配列の要素を取り出してkey_nameにtrueのキーのみを代入 %>
+                      <% if  /^General./ =~ key_name %>
+                        <% symptom = @symptom_attributes[key_name] %> <%# key_name変数をもとにハッシュの値を取得 %>
+                        <% if symptom.present? %>
+                          <%= symptom %>
+                          <% binding.pry %>
+                        <% end %>
+                      <%# else %>
+                        <%# next %>
+                      <% end %>
+                      <% i += 1 %>
+                      <% n += 1 %>
+                    </div>
+                    </td>
+                  </tr>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="skin">
+              <h3>Skin</h3>
+
+              <table class="table table-striped table-bordered">
+              <%# symptomモデルから取得した属性のハッシュ(@symptom_attributes)から %>
+              <%# キーのみの配列(@symptom_keys)を利用してハッシュの値を参照する %>
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %> <%# 演算子を <= にすると最後尾の要素が含まれてしまうためにエラーになる %>
+                  <tr>
+                    <td>
+                    <div class= "form-group" >
+                      <% key_name = @true_symptom_keys[i] %> <%# キーの配列の要素を取り出してkey_nameにtrueのキーのみを代入 %>
+                      <% if  /^Skin./ =~ key_name %>
+                        <% symptom = @symptom_attributes[key_name] %> <%# key_name変数をもとにハッシュの値を取得 %>
+                        <%= symptom %>
+                      <% end %>
+                      <% i += 1 %>
+                      <% n += 1 %>
+                    </div>
+                    </td>
+                  </tr>
+                <% end %>
+
+              </table >
+            </div>
+
+          </div>
+
+          <div class="row pull-right">
+            <%= link_to "Back", root_path, class:"btn btn-default" %>
+            <%= link_to 'Delete', symptom_path(@symptom), method: :delete, data: { confirm: 'Are you sure to delete?'}, class: "btn btn-default" %>
+            <%= link_to 'Edit', edit_symptom_path(@symptom), class: "btn btn-info" %>
+          </div>
+
+        </div> <!-- patient-symptom-info -->
+      </div> <!-- row -->
+    <% end %> <%# if @symptom.blank? %>
+  </div>  <!-- container -->
+</div>  <!-- container-fluid -->
+
+
+<script>
+
+</script>
