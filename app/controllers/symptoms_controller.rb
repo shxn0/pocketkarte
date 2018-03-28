@@ -2,6 +2,7 @@ class SymptomsController < ApplicationController
 
   before_action :set_symptom, only:[:edit, :update, :destroy]
   before_action :gets_symptom_names, only:[:index, :new, :edit, :update, :destroy]
+  before_action :set_category_names, only:[:new, :edit, :update, :destroy]
 
   def index
     @symptoms = Symptom.all
@@ -64,7 +65,14 @@ class SymptomsController < ApplicationController
       @true_symptom_keys = @true_symptom_attributes.keys
       #@true_symptom_keys変数の値がstring型なのでシンボル型に上書きする
       @true_symptom_keys = @true_symptom_keys.map {|st| st.to_sym }
-      # binding.pry
     end
+
+    # HACK: 配列の要素の順番を変更するとViewのカテゴリー名と一致しなくなるので注意
+    def set_category_names
+      @category_names = ["General", "Skin", "Head", "Ears", "Eyes", "Nose", "Throat", "Neck", "Breasts", "Respiratory", "Gastrointestina",
+                         "Urinary", "Vascular", "Musculoskeletal", "Neurologic", "Hematologic", "Endocrine", "Psychiatric"
+      ]
+    end
+
 
 end
