@@ -27,3 +27,53 @@ ja:
       surgery_in_the_past: "過去に手術を受けたことはありますか？"
       hospitalized_in_the_past: "過去に入院したことはありますか？"
       attending_to_a_hospital_now: "現在は通院中ですか？"
+
+  patient_backgrounds:
+    index:
+      age: "年齢"
+      year-month-day: "年-月-日"
+    form:
+      year-month-day: "年-月-日"
+
+
+
+  symptoms: #カテゴリー名
+    index:
+      General: "一般症状"
+      Skin: "皮膚"
+      Head: "頭"
+      Ears: "耳"
+      Eyes: "目"
+      Nose: "鼻"
+      Throat: "喉"
+      Neck: "首"
+      Breasts: "胸"
+      Respiratory: "呼吸器系"
+      Gastrointestina: "消化器系"
+      Urinary: "泌尿器系"
+      Vascular: "血管系"
+      Musculoskeletal: "筋骨格系"
+      Neurologic: "神経系"
+      Hematologic: "血管系"
+      Endocrine: "内分泌系"
+      Psychiatric: "精神系"
+
+    form: #カテゴリー名
+      General: "一般症状"
+      Skin: "皮膚"
+      Head: "頭"
+      Ears: "耳"
+      Eyes: "目"
+      Nose: "鼻"
+      Throat: "喉"
+      Neck: "首"
+      Breasts: "胸"
+      Respiratory: "呼吸器系"
+      Gastrointestina: "消化器系"
+      Urinary: "泌尿器系"
+      Vascular: "血管系"
+      Musculoskeletal: "筋骨格系"
+      Neurologic: "神経系"
+      Hematologic: "血管系"
+      Endocrine: "内分泌系"
+      Psychiatric: "精神系"

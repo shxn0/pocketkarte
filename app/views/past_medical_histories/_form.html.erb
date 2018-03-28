@@ -13,6 +13,13 @@
       </div>
     <% end %>
 
+    <div class="container">
+      <div class="dropdown pull-right">
+        <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+          <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
+        <% end %>
+      </div>
+    </div>
 
     <div class="row">
       <div class="past_medical_history-info col-md-6 col-md-offset-3">
@@ -71,7 +78,7 @@
 
         </div>
 
-          <div class="wrapper-bg-form-submit">
+        <div class="row pull-right">
             <%= link_to "Back", past_medical_histories_path, class:"btn btn-default" %>
             <%= f.submit 'Register', class: 'btn btn-info' %>
           </div>

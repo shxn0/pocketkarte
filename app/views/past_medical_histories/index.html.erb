@@ -21,7 +21,14 @@
 
     <% else %>
 
-
+    <div class="container">
+      <div class="dropdown pull-right">
+        <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+          <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
+        <% end %>
+      </div>
+    </div>
+    
       <div class="row">
         <div class="patient-background-info col-md-6 col-md-offset-3">
           <span class="badge badge-info">Your background info</span>

@@ -27,3 +27,31 @@ en:
       surgery_in_the_past: "Have you ever had surgery in the past?"
       hospitalized_in_the_past: "Have you ever been hospitalized in the past?"
       attending_to_a_hospital_now: "Are you attending to a hospital now?"
+
+  patient_backgrounds:
+    index:
+      age: "Age"
+      year-month-day: "Year-Month-Day"
+    form:
+      year-month-day: "Year-Month-Day"
+
+  symptoms: #カテゴリー名
+    index:
+      General: "General"
+      Skin: "Skin"
+      Head: "Head"
+      Ears: "Ears"
+      Eyes: "Eyes"
+      Nose: "Nose"
+      Throat: "Throat"
+      Neck: "Neck"
+      Breasts: "Breasts"
+      Respiratory: "Respiratory"
+      Gastrointestina: "Gastrointestina"
+      Urinary: "Urinary"
+      Vascular: "Vascular"
+      Musculoskeletal: "Musculoskeletal"
+      Neurologic: "Neurologic"
+      Hematologic: "Hematologic"
+      Endocrine: "Endocrine"
+      Psychiatric: "Psychiatric"

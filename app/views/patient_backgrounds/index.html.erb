@@ -21,6 +21,15 @@
     </div>
 
   <% else %>
+
+  <div class="container">
+    <div class="dropdown pull-right">
+      <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+        <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
+      <% end %>
+    </div>
+  </div>
+
     <div class="row">
       <div class="patient-background-info col-md-6 col-md-offset-3">
         <span class="badge badge-info">Your background info</span>
@@ -38,13 +47,13 @@
               <strong><%= @birthday %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @patient_background.birthday %>
-                <p> Year-Month-Day </p>
+                <p><%= t('patient_backgrounds.index.year-month-day') %></p>
               </div>
             </div>
 
             <%# Age項目は生年月日から自動算出される設計でカラムに登録していないためView.ymlを参照して翻訳 %>
             <div class= "form-group" >
-              <strong><%= t('patient_background.index.age') %></strong><span class="required-item">*</span>
+              <strong><%= t('patient_backgrounds.index.age') %></strong><span class="required-item">*</span>
               <div class="items_arrange">
                 <%= @age_of_patient %>
               </div>

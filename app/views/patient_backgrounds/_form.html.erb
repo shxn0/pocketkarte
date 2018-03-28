@@ -13,6 +13,13 @@
         </div>
       <% end %>
 
+      <div class="container">
+        <div class="dropdown pull-right">
+          <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+            <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
+          <% end %>
+        </div>
+      </div>
 
   <div class="row">
     <div class="patient-background-info col-md-6 col-md-offset-3">
@@ -31,8 +38,8 @@
             <div class= "form-group" >
               <%= f.label :birthday %><span class="required-item">*</span>
               <div class="items_arrange">
-                <%= f.date_select :birthday, :start_year => 1918, :end_year => 2020, :use_month_numbers => true, :include_blank => true, :date_separator => "/"%>
-                <p> Year/Month/Day </p>
+                <%= f.date_select :birthday, :start_year => 1918, :end_year => 2020, :use_month_numbers => true, :include_blank => true, :date_separator => "-"%>
+                <p><%= t('patient_backgrounds.index.year-month-day') %></p>
               </div>
             </div>
 
