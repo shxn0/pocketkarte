@@ -18,65 +18,563 @@
       </div>
 
     <% else %>
+    <div class="container">
+      <div class="dropdown pull-right">
+        <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+          <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
+        <% end %>
+      </div>
+    </div>
+
       <div class="row">
         <div class="patient-symptom-info col-md-6 col-md-offset-3">
           <span class="badge badge-info">Your symptom info</span>
 
           <div class="review_of_system">
-            <div class="general">
-              <h3>General</h3>
 
+          <%# HACK: カテゴリー表示のコードが冗長的 %>
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^General./ =~ true_symptom_key %>
+                  <h3><%= t('.General')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
               <table class="table table-striped table-bordered">
               <%# symptomモデルから取得した属性のハッシュ(@symptom_attributes)から %>
               <%# キーのみの配列(@symptom_keys)を利用してハッシュの値を参照する %>
                 <% i = 0 %>
                 <% n = 0 %>
                 <% while n < @true_symptom_keys.length %> <%# 演算子を <= にすると最後尾の要素が含まれてしまうためにエラーになる %>
-                  <tr>
-                    <td>
-                    <div class= "form-group" >
-                      <% key_name = @true_symptom_keys[i] %> <%# キーの配列の要素を取り出してkey_nameにtrueのキーのみを代入 %>
-                      <% if  /^General./ =~ key_name %>
-                        <% symptom = @symptom_attributes[key_name] %> <%# key_name変数をもとにハッシュの値を取得 %>
-                        <% if symptom.present? %>
-                          <%= symptom %>
-                          <% binding.pry %>
-                        <% end %>
-                      <%# else %>
-                        <%# next %>
-                      <% end %>
-                      <% i += 1 %>
-                      <% n += 1 %>
-                    </div>
-                    </td>
-                  </tr>
+                  <% key_name = @true_symptom_keys[i] %> <%# キーの配列の要素を取り出してkey_nameにtrueのキーのみを代入 %>
+                  <% if  /^General./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %> <%# key_name変数をもとにハッシュの値を取得 %>
+                    <%# binding.pry %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
                 <% end %>
 
               </table >
             </div>
 
-            <div class="skin">
-              <h3>Skin</h3>
-
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Skin./ =~ true_symptom_key %>
+                  <h3><%= t('.Skin')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
               <table class="table table-striped table-bordered">
-              <%# symptomモデルから取得した属性のハッシュ(@symptom_attributes)から %>
-              <%# キーのみの配列(@symptom_keys)を利用してハッシュの値を参照する %>
                 <% i = 0 %>
                 <% n = 0 %>
-                <% while n < @true_symptom_keys.length %> <%# 演算子を <= にすると最後尾の要素が含まれてしまうためにエラーになる %>
-                  <tr>
-                    <td>
-                    <div class= "form-group" >
-                      <% key_name = @true_symptom_keys[i] %> <%# キーの配列の要素を取り出してkey_nameにtrueのキーのみを代入 %>
-                      <% if  /^Skin./ =~ key_name %>
-                        <% symptom = @symptom_attributes[key_name] %> <%# key_name変数をもとにハッシュの値を取得 %>
-                        <%= symptom %>
-                      <% end %>
-                      <% i += 1 %>
-                      <% n += 1 %>
-                    </div>
-                    </td>
-                  </tr>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Skin./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Head./ =~ true_symptom_key %>
+                <h3><%= t('.Head')%></h3>
+                <% break %>
+              <% end %> <%# if %>
+            <% end %> <%# each %>
+            <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Head./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Ears./ =~ true_symptom_key %>
+                <h3><%= t('.Ears')%></h3>
+                <% break %>
+              <% end %> <%# if %>
+            <% end %> <%# each %>
+            <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Ears./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Eyes./ =~ true_symptom_key %>
+                <h3><%= t('.Eyes')%></h3>
+                <% break %>
+              <% end %> <%# if %>
+            <% end %> <%# each %>
+            <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Eyes./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Nose./ =~ true_symptom_key %>
+                <h3><%= t('.Nose')%></h3>
+                <% break %>
+              <% end %> <%# if %>
+            <% end %> <%# each %>
+            <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Nose./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Throat./ =~ true_symptom_key %>
+                <h3><%= t('.Throat')%></h3>
+                <% break %>
+              <% end %> <%# if %>
+            <% end %> <%# each %>
+            <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Throat./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Neck./ =~ true_symptom_key %>
+                <h3><%= t('.Neck')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Neck./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Breasts./ =~ true_symptom_key %>
+                  <h3><%= t('.Breasts')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Breasts./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Respiratory./ =~ true_symptom_key %>
+                  <h3><%= t('.Respiratory')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Respiratory./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Gastrointestina./ =~ true_symptom_key %>
+                  <h3><%= t('.Gastrointestina')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Gastrointestina./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Urinary./ =~ true_symptom_key %>
+                  <h3><%= t('.Urinary')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Urinary./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Vascular./ =~ true_symptom_key %>
+                  <h3><%= t('.Vascular')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Vascular./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Musculoskeletal./ =~ true_symptom_key %>
+                  <h3><%= t('.Musculoskeletal')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Musculoskeletal./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Neurologic./ =~ true_symptom_key %>
+                  <h3><%= t('.Neurologic')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Neurologic./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Hematologic./ =~ true_symptom_key %>
+                  <h3><%= t('.Hematologic')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Hematologic./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Endocrine./ =~ true_symptom_key %>
+                  <h3><%= t('.Endocrine')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Endocrine./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
+                <% end %>
+
+              </table >
+            </div>
+
+            <div class="categories">
+              <% if @true_symptom_keys.each do |true_symptom_key| %>
+                <% if /^Psychiatric./ =~ true_symptom_key %>
+                  <h3><%= t('.Psychiatric')%></h3>
+                  <% break %>
+                <% end %> <%# if %>
+              <% end %> <%# each %>
+              <% end %> <%# if %>
+              <table class="table table-striped table-bordered">
+                <% i = 0 %>
+                <% n = 0 %>
+                <% while n < @true_symptom_keys.length %>
+                  <% key_name = @true_symptom_keys[i] %>
+                  <% if  /^Psychiatric./ =~ key_name %>
+                    <% symptom = @symptom_attributes[key_name] %>
+                    <tr>
+                      <td>
+                      <div class= "form-group" >
+                      <%= symptom %>
+                      </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                    <% i += 1 %>
+                    <% n += 1 %>
                 <% end %>
 
               </table >
@@ -96,7 +594,7 @@
   </div>  <!-- container -->
 </div>  <!-- container-fluid -->
 
-
 <script>
+
 
 </script>
