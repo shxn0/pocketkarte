@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20180323042009) do
     t.boolean  "Skin_dryness",                                                    default: false, null: false
     t.boolean  "Skin_color_changes",                                              default: false, null: false
     t.boolean  "Skin_hair_and_nail_changes",                                      default: false, null: false
-    t.boolean  "Head_headache_",                                                  default: false, null: false
+    t.boolean  "Head_headache",                                                   default: false, null: false
     t.boolean  "Head_head_injury",                                                default: false, null: false
     t.boolean  "Head_neck_Pain",                                                  default: false, null: false
     t.boolean  "Ears_decreased_hearing",                                          default: false, null: false
@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 20180323042009) do
     t.boolean  "Endocrine_sweating",                                              default: false, null: false
     t.boolean  "Endocrine_frequent_urination",                                    default: false, null: false
     t.boolean  "Endocrine_thirst",                                                default: false, null: false
-    t.boolean  "Endocrine_cHange_in_appetite",                                    default: false, null: false
+    t.boolean  "Endocrine_change_in_appetite",                                    default: false, null: false
     t.boolean  "Psychiatric_nervousness",                                         default: false, null: false
     t.boolean  "Psychiatric_stress",                                              default: false, null: false
     t.boolean  "Psychiatric_depression",                                          default: false, null: false
