@@ -1,6 +1,6 @@
 class PastMedicalHistoriesController < ApplicationController
   before_action :set_past_medical_history, only:[:edit, :update, :destroy]
-  before_action :tranlatable_column_names, only:[:index]
+  before_action :column_names_of_past_medical_history, only:[:index]
 
   def index
     @past_medical_histories = PastMedicalHistory.all
@@ -45,7 +45,7 @@ class PastMedicalHistoriesController < ApplicationController
       @past_medical_history = PastMedicalHistory.find(params[:id])
     end
 
-    def tranlatable_column_names
+    def column_names_of_past_medical_history
       column_names = I18n.t('activerecord.attributes.past_medical_history')
         @icd_code = column_names[:icd_code]
         @brain_disease_in_the_past = column_names[:brain_disease_in_the_past]
