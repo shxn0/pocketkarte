@@ -1,4 +1,5 @@
 class AllergiesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @allergies = current_user.allergies

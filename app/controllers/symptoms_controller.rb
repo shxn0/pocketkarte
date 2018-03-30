@@ -1,5 +1,6 @@
 class SymptomsController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :set_symptom, only:[:edit, :update, :destroy]
   before_action :gets_symptom_names, only:[:index, :new, :edit, :update, :destroy]
   before_action :set_category_names, only:[:new, :edit, :update, :destroy]

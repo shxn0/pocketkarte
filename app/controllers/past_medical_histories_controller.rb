@@ -1,4 +1,5 @@
 class PastMedicalHistoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_past_medical_history, only:[:edit, :update, :destroy]
   before_action :column_names_of_past_medical_history, only:[:index]
 
