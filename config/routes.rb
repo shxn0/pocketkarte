@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   root "top#index"
   get 'landing', to: 'top#landing'
 
-  # scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')} / do
-  #   resources :posts, params: :slug
-  # end
+  scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')} / do
+    resources :posts, params: :slug
+  end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
