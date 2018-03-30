@@ -86,3 +86,92 @@
     margin-top: 5px;
     margin-bottom:0px;
   }
+
+  .flash{
+    background-color: #55d654;
+    color: white;
+  }
+
+
+  .content-1 > h2 {
+    margin: 0;
+  }
+
+  .content-1 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .main-header {
+    background-image: image-url("network.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    max-width: 100%;
+    height: auto;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  .main-header > h1{
+    color: white;
+    text-align: center;
+  }
+
+  .docter img {
+    display: block;
+    margin:0 auto;
+    max-width: 100%;
+    height: auto;
+    padding-top: 100px;
+  }
+
+  .container-fluid > h2 {
+    font-size: 45px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .row {
+    margin: 0 auto;
+  }
+
+  .function-images{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+
+  .function-image img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .function-image p {
+    font-size: 17px;
+  }
+
+  .function-text{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .explanations {
+    font-size: 20px;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+  }
+
+  .under {
+    border-bottom: solid 3px #36AAFC;
+    padding-bottom: 10px;
+    }
+
+  .sign-page{
+    padding-top: 30px;
+  }
+
+  .menu-bottun {
+    padding-bottom: 30px;
+  }

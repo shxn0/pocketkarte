@@ -10,62 +10,60 @@
   <div class="container">
     <div class="row">
       <div class="page-subtitle center-block text-center">
-
-<%# TODO: フラッシュメーッセージをデザインする %>
-        <p class="flash"><%= notice %><%= alert %></p> <%# devise ログイン後のフラッシュメッセージを表示 %>
+        <%# TODO: フラッシュメーッセージをデザインする %>
+        <p class="flash"><strong><%= notice %><%= alert %></strong></p> <%# devise ログイン後のフラッシュメッセージを表示 %>
         <h1>Menus</h1>
       </div>
     </div>
 
-<%# TODO: menu-bottunの配置を微調整する %>
-    <div class="row">
-    <div class="menu-bottuns">
+      <%# TODO: menu-bottunの配置を微調整する %>
+      <div class="row">
+      <div class="menu-bottuns">
 
-      <div class="col-md-3 col-sm-6">
-        <div class="menu-bottun">
-          <i class="now-ui-icons users_single-02"></i>
-          <%= link_to "Background", patient_backgrounds_path, class:"btn btn-info btn-lg"%>
-          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your Background" data-content="Register your background infomation such as your name, birthday, where you from etc.">What is this?</button>
+        <div class="col-md-3 col-sm-6">
+          <div class="menu-bottun">
+            <i class="now-ui-icons users_single-02"></i>
+            <%= link_to "Background", patient_backgrounds_path, class:"btn btn-info btn-lg"%>
+            <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your Background" data-content="Register your background infomation such as your name, birthday, where you from etc.">What is this?</button>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="menu-bottun">
-          <i class="now-ui-icons business_badge"></i>
-          <%= link_to "Medicine", medicines_path, class:"btn btn-info btn-lg"%>
-          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your Medicines" data-content="Register infomation for medicines you have been taking.">What is this?</button>
+        <div class="col-md-3 col-sm-6">
+          <div class="menu-bottun">
+            <i class="now-ui-icons business_badge"></i>
+            <%= link_to "Medicine", medicines_path, class:"btn btn-info btn-lg"%>
+            <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your Medicines" data-content="Register infomation for medicines you have been taking.">What is this?</button>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="menu-bottun">
-          <i class="now-ui-icons education_atom"></i>
-          <%= link_to "Allergy", allergies_path, class:"btn btn-info btn-lg"%>
-          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="your Allergies" data-content="Register infomation for allergies you have occured in the past.">What is this?</button>
+        <div class="col-md-3 col-sm-6">
+          <div class="menu-bottun">
+            <i class="now-ui-icons education_atom"></i>
+            <%= link_to "Allergy", allergies_path, class:"btn btn-info btn-lg"%>
+            <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="your Allergies" data-content="Register infomation for allergies you have occured in the past.">What is this?</button>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="menu-bottun">
-          <i class="now-ui-icons health_ambulance"></i>
-          <%= link_to "Past Medical History", past_medical_histories_path, class:"btn btn-info btn-lg"%>
-          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your past medical histories" data-content="Register your past medical histories. You can register ICD-code as well.">What is this?</button>
+        <div class="col-md-3 col-sm-6">
+          <div class="menu-bottun">
+            <i class="now-ui-icons health_ambulance"></i>
+            <%= link_to "Past Medical History", past_medical_histories_path, class:"btn btn-info btn-lg"%>
+            <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Your past medical histories" data-content="Register your past medical histories. You can register ICD-code as well.">What is this?</button>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="menu-bottun">
-          <i class="now-ui-icons media-2_sound-wave"></i>
-          <%= link_to "Symptoms", symptoms_path, class:"btn btn-info btn-lg"%>
-          <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="symptoms" data-content="Register your symptoms to make medical comunications smoother. There is a translation function as well.">What is this?</button>
+        <div class="col-md-3 col-sm-6">
+          <div class="menu-bottun">
+            <i class="now-ui-icons media-2_sound-wave"></i>
+            <%= link_to "Symptoms", symptoms_path, class:"btn btn-info btn-lg"%>
+            <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="symptoms" data-content="Register your symptoms to make medical comunications smoother. There is a translation function as well.">What is this?</button>
+          </div>
         </div>
-      </div>
 
-    </div>
-    </div>
+      </div>
+      </div>
 
   </div>
-
 </div>
 
 <style>
