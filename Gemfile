@@ -56,3 +56,14 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :development do
+  gem 'letter_opener_web'
+  gem 'dotenv-rails'
+end
+
+gem 'rails_12factor', group: :production
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
