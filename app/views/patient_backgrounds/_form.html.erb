@@ -14,18 +14,19 @@
       <% end %>
 
       <div class="container">
+        <div class="translation col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
         <div class="dropdown pull-right">
           <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
             <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
           <% end %>
         </div>
+        </div>
       </div>
 
-  <div class="row">
-    <div class="patient-background-info col-md-6 col-md-offset-3">
-
-      <%#= form_for (@patient_background) do |f| %>
-        <span class="badge badge-info">Your background info</span>
+  <div class="container">
+    <div class="row">
+      <div class="patient-background-info col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <span class="badge badge-info mb-3">Your background info</span>
           <div class="blockquote">
 
             <div class= "form-group" >
@@ -50,6 +51,7 @@
               </div>
             </div>
 
+            <%# TODO: sm/mdサイズでform-groupがblockquate枠からはみ出てしまうので修正 %>
             <div class= "form-group" >
               <%= f.label :country %><span class="required-item">*</span>
               <div class="items_arrange">
@@ -95,12 +97,12 @@
 
           </div>
 
-        <div class="row pull-right">
-          <%= link_to "Back", patient_backgrounds_path, class:"btn btn-default" %>
-          <%= f.submit 'Register', class: 'btn btn-info' %>
-        </div>
-      <% end %> <%# form_for (@patient_background) do |f| %>
-
-    </div> <!-- patient-background-info -->
-  </div> <!-- row -->
-</div> <!-- container -->
+          <div class="row pull-right">
+            <%= link_to "Back", patient_backgrounds_path, class:"btn btn-default" %>
+            <%= f.submit 'Register', class: 'btn btn-info' %>
+          </div>
+        <% end %> <%# form_for (@patient_background) do |f| %>
+        </div> <!-- patient-background-info -->
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </div> <!-- container -->

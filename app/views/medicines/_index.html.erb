@@ -10,11 +10,14 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
+          <div class="medicine-img m-2">
           <%= image_tag medicine.medicine_img, class:"img-responsive" %>
+          </div>
         </div>
 
         <div class="panel-footer">
-          <Span>Name:</Span>&emsp;<strong><%= medicine[:medicine_name] %></strong>
+          <!-- <Span>Name:</Span>&emsp;<strong><%= medicine[:medicine_name] %></strong> -->
+          <strong><%= medicine[:medicine_name] %></strong>
           <span class="text-right">
             <%= link_to "", medicine_path(medicine), method: :delete, data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
           </span>
