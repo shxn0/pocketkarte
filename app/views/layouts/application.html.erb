@@ -32,19 +32,28 @@
 </head>
 <body>
   <header>
-    <nav class="navbar nav-primary navbar-expand-lg bg-info">
-      <div class="container">
-        <div class="navbar-translate">
-          <%= link_to "Pocket Karte", landing_path, class:"navbar-brand" %>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-     	        <span class="navbar-toggler-bar bar1"></span>
-  	          <span class="navbar-toggler-bar bar2"></span>
-  	          <span class="navbar-toggler-bar bar3"></span>
- 	          </button>
+
+    <nav class="navbar nav-primary navbar-expand-lg bg-info navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> -->
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+            <!-- <div>はブロック要素に対して使用され、<span>はインライン要素に対して使用される -->
+            <!-- sr-only内はボタンをマウスオーバーした際にナビゲーション項目を読み上げる -->
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Pocket Karte", landing_path, class:"navbar-brand"%>
         </div>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navigation">
-    	    <ul class="navbar-nav">
+        <!-- <div class="collapse navbar-collapse justify-content-end" id="#mainNav"> -->
+
+        <div class="collapse navbar-collapse" id="#mainNav">
+
+          <ul class="nav navbar-nav navbar-right">
+
             <li class="nav-item active">
               <%= link_to "Menu", root_path, class:"nav-link" %>
             </li>
@@ -77,9 +86,9 @@
                 <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
               <% end %>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#pablo">Disabled</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
