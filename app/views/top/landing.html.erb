@@ -1,3 +1,7 @@
+
+<div class="container-fluid px-0">
+
+
     <% if notice.nil? == false %>
       <div class="alert alert-success col-md-6 col-md-offset-3" role="alert">
 
@@ -25,19 +29,20 @@
     </div>
 
     <section class="container-fluid">
-        <h2><span class="under">What can you do?</span></h2>
+      <h2><span class="under">What can you do?</span></h2>
+
         <div class="function-images">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <div class="function-image">
-              <img src="<%= asset_path "bg.png" %>">
+              <img src="<%= asset_path "bg.png" %>" class="img-responsive">
               <div class="function-text text-muted">
                 <strong><p>Make your medical <br> communications smoother </p></strong>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <div class="function-image">
               <img src="<%= asset_path "medi.png" %>">
               <div class="function-text text-muted">
@@ -46,7 +51,7 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <div class="function-image">
               <img src="<%= asset_path "ros.png" %>">
               <div class="function-text text-muted">
@@ -55,18 +60,32 @@
             </div>
           </div>
         </div>
+
       </div>
 
-      <div class="col-xs-2 col-xs-offset-5 col-md-2 col-md-offset-5">
+
+    <div class="row">
+
+      <div class="bg-warning mb-5">
+        <p>col-xs</p>
+      </div>
+      <div class="bg-success mb-5 d-none d-sm-block">
+        <p>col-sm</p>
+      </div>
+      <div class="bg-primary mb-5 d-none d-md-block">
+        <p>col-md</p>
+      </div>
+      <div class="bg-danger mb-5 d-none d-lg-block">
+        <p>col-lg</p>
+      </div>
+
+    </div>
+
+
+
+      <div class="bg-success col-xs-2 col-xs-offset-5 pl-0">
         <%= link_to "Get Started", new_user_registration_path, class:"btn btn-info btn-lg" %>
       </div>
 
-
     </section>
-
-    <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
-      <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
-
-        <%#= link_to "backgrounds_index", backgrounds_path %>
-      </div>
-    </div>
+</div>

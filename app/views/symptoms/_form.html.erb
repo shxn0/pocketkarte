@@ -12,39 +12,89 @@
       </div>
     <% end %>
 
-    <div class="bottuns">
-      <div class="check skin_btn btn btn-default"><%= t(".General")%></div>
-      <div class="check head_btn btn btn-default"><%= t(".Head")%></div>
-      <div class="check ears_btn btn btn-default"><%= t(".Ears")%></div>
-      <div class="check eyes_btn btn btn-default"><%= t(".Eyes")%></div>
-      <div class="check nose_btn btn btn-default"><%= t(".Nose")%></div>
-      <div class="check throat_btn btn btn-default"><%= t(".Throat")%></div>
-      <div class="check neck_btn btn btn-default"><%= t(".Neck")%></div>
-      <div class="check breasts_btn btn btn-default"><%= t(".Breasts")%></div>
-      <div class="check respiratory_btn btn btn-default"><%= t(".Respiratory")%></div>
-      <div class="check gastrointestina_btn btn btn-default"><%= t(".Gastrointestina")%></div>
-      <div class="check urinary_btn btn btn-default"><%= t(".Urinary")%></div>
-      <div class="check vascular_btn btn btn-default"><%= t(".Vascular")%></div>
-      <div class="check musculoskeletal_btn btn btn-default"><%= t(".Musculoskeletal")%></div>
-      <div class="check neurologic_btn btn btn-default"><%= t(".Neurologic")%></div>
-      <div class="check hematologic_btn btn btn-default"><%= t(".Hematologic")%></div>
-      <div class="check endocrine_btn btn btn-default"><%= t(".Endocrine")%></div>
-      <div class="check psychiatric_btn btn btn-default"><%= t(".Psychiatric")%></div>
+    <div class="container">
+      <div class="bottuns center-block">
+          <div class="check skin_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".General")%></div>
+          <div class="check head_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Head")%></div>
+          <div class="check ears_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Ears")%></div>
+          <div class="check eyes_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Eyes")%></div>
+          <div class="check nose_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Nose")%></div>
+          <div class="check throat_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Throat")%></div>
+          <div class="check neck_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Neck")%></div>
+          <div class="check breasts_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Breasts")%></div>
+          <div class="check respiratory_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Respiratory")%></div>
+          <div class="check gastrointestina_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Gastrointestina")%></div>
+          <div class="check urinary_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Urinary")%></div>
+          <div class="check vascular_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Vascular")%></div>
+          <div class="check musculoskeletal_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Musculoskeletal")%></div>
+          <div class="check neurologic_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Neurologic")%></div>
+          <div class="check hematologic_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Hematologic")%></div>
+          <div class="check endocrine_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Endocrine")%></div>
+          <div class="check psychiatric_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Psychiatric")%></div>
+      </div>
     </div>
 
+
+    <!-- <div class="container">
+      <div class="btn-group col-sm-6 col-md-12">
+        <button type="button" class="check skin_btn btn btn-default"><%= t(".General")%></button>
+        <button type="button"class="check head_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Head")%></button>
+        <button type="button"class="check ears_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Ears")%></button>
+        <button type="button"class="check eyes_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Eyes")%></button>
+        <button type="button"class="check nose_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Nose")%></button>
+        <button type="button"class="check throat_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Throat")%></button>
+        <button type="button"class="check neck_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Neck")%></button>
+        <button type="button"class="check breasts_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Breasts")%></button>
+        <button type="button"class="check respiratory_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Respiratory")%></button>
+        <button type="button"class="check gastrointestina_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Gastrointestina")%></button>
+        <button type="button"class="check urinary_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Urinary")%></button>
+        <button type="button"class="check vascular_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Vascular")%></button>
+        <button type="button"class="check musculoskeletal_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Musculoskeletal")%></button>
+        <button type="button"class="check neurologic_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Neurologic")%></button>
+        <button type="button"class="check hematologic_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Hematologic")%></button>
+        <button type="button"class="check endocrine_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Endocrine")%></button>
+        <button type="button"class="check psychiatric_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Psychiatric")%></button>
+      </div>
+    </div> -->
+
+    <!-- <div class="container">
+      <div class="bottuns center-block">
+          <div class="check skin_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".General")%></div>
+          <div class="check head_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Head")%></div>
+          <div class="check ears_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Ears")%></div>
+          <div class="check eyes_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Eyes")%></div>
+          <div class="check nose_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Nose")%></div>
+          <div class="check throat_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Throat")%></div>
+          <div class="check neck_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Neck")%></div>
+          <div class="check breasts_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Breasts")%></div>
+          <div class="check respiratory_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Respiratory")%></div>
+          <div class="check gastrointestina_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Gastrointestina")%></div>
+          <div class="check urinary_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Urinary")%></div>
+          <div class="check vascular_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Vascular")%></div>
+          <div class="check musculoskeletal_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Musculoskeletal")%></div>
+          <div class="check neurologic_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Neurologic")%></div>
+          <div class="check hematologic_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Hematologic")%></div>
+          <div class="check endocrine_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Endocrine")%></div>
+          <div class="check psychiatric_btn btn btn-default col-sm-6 col-md-2 col-lg-2"><%= t(".Psychiatric")%></div>
+      </div>
+    </div> -->
+
     <div class="container">
+      <div class="translation col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
       <div class="dropdown pull-right">
         <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
           <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
         <% end %>
       </div>
+      </div>
     </div>
 
-    <div class="row">
-      <div class="patient-background-info col-md-6 col-md-offset-3">
+    <div class="container">
+      <div class="row">
+        <div class="symptom-info col-sm-10 col-md-8 col-lg-6 mx-auto">
         <span class="badge badge-info">Your background info</span>
 
-        <div class="review_of_system">
+        <div class="review-of-system">
           <div class="categories">
 
           <%# set_category_namesメソッドでカテゴリー名の配列を参照してView.ja.ymlファイルのcategoryを表示 %>
@@ -74,23 +124,22 @@
                 <% n += 1 %>
               <% end %>
             </table >
-
             <% index += 1 %>
           <% end %>
 
-          </div>
-        </div>
+        </div> <!-- categories -->
+        </div> <!-- review-of-system -->
 
         <div class="row pull-right">
           <%= link_to "Back", symptoms_path, class:"btn btn-default" %>
           <%= f.submit 'Register', class: 'btn btn-info' %>
         </div>
 
-      </div>
-    </div>
-
+      </div> <!-- symptom-info -->
+      </div> <!-- row -->
+    </div> <!-- container -->
   <% end %>
-</div>
+</div> <!-- container -->
 
 
 <script>

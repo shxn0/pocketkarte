@@ -19,15 +19,36 @@
 
     <% else %>
     <div class="container">
+      <div class="translation col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
       <div class="dropdown pull-right">
         <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
           <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
         <% end %>
       </div>
+      </div>
     </div>
 
+    <div class="container">
       <div class="row">
-        <div class="patient-symptom-info col-md-6 col-md-offset-3">
+        <div class="bg-primary col-sm-4 col-md-6 col-lg-4">
+          <p>col-sm-4 col-md-6 col-lg-4</p>
+        </div>
+
+        <div class="bg-info col-sm-4 col-md-3 col-lg-4">
+          <p>col-sm-4 col-md-3 col-lg-4</p>
+        </div>
+
+        <div class="bg-success col-sm-4  col-md-3 col-lg-4">
+          <p>col-sm-4  col-md-3 col-lg-4</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="patient-symptom-info col-sm-10 col-md-8 col-lg-6 mx-auto">
           <span class="badge badge-info">Your symptom info</span>
 
           <div class="review_of_system">
@@ -590,6 +611,7 @@
 
         </div> <!-- patient-symptom-info -->
       </div> <!-- row -->
+    </div> <!-- container -->
     <% end %> <%# if @symptom.blank? %>
   </div>  <!-- container -->
 </div>  <!-- container-fluid -->

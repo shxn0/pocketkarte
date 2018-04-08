@@ -23,17 +23,20 @@
   <% else %>
 
   <div class="container">
+    <div class="translation col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
     <div class="dropdown pull-right">
       <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
         <%= link_to("Translation", i18n_url_for(params.merge(locale: locale)), class: "btn btn-info" ) %>
       <% end %>
     </div>
+    </div>
   </div>
 
+  <div class="container">
     <div class="row">
-      <div class="patient-background-info col-md-6 col-md-offset-3">
-        <span class="badge badge-info">Your background info</span>
-          <div class="blockquote ">
+      <div class="patient-background-info col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <span class="badge badge-info mb-3">Your background info</span>
+          <div class="blockquote">
 
             <div class= "form-group" >
               <strong><%= @name %></strong><span class="required-item">*</span>
@@ -110,6 +113,7 @@
           </div>
       </div> <!-- patient-background-info -->
     </div> <!-- row -->
+  </div> <!-- container -->
   <% end %> <%# if @patient_background.nil? %>
   </div>  <!-- container -->
 </div>  <!-- container-fluid -->
