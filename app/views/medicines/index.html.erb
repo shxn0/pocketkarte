@@ -9,8 +9,6 @@
 
       <%= link_to "Add medicines", new_medicine_path, class: "btn btn-info btn-md"%>
 
-        <%#= render partial: 'form', locals: { medicine: @medicine } %>
-
         <div class="medicines_area">
           <%= render partial: 'index', locals: { medicines: @medicines } %>
         </div>
