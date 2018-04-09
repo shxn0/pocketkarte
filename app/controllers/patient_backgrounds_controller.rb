@@ -45,6 +45,7 @@ class PatientBackgroundsController < ApplicationController
     redirect_to patient_backgrounds_path, confirm:{data:"Are you sure to delete?"}, notice:"Your registration has been deleted."
   end
 
+
   private
     def patient_background_params
       params.require(:patient_background).permit(PatientBackground.column_names.map{|c| c.to_sym})

@@ -45,6 +45,7 @@ class MedicinesController < ApplicationController
     redirect_to medicines_path
   end
 
+
   private
 
     def medicine_params
