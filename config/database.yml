@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: pocketkarte_production
+  database: Pocketkarte_production
   username: Pocketkarte
   password: <%= ENV['POCKETKARTE_DATABASE_PASSWORD'] %>
