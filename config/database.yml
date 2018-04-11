@@ -78,6 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+#アプリ名をpocketkarteからPocketkarteに変更したため、データベース名も同様に変更
 production:
   <<: *default
   database: Pocketkarte_production
