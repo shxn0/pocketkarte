@@ -18,3 +18,5 @@ CarrierWave.configure do |config|
   when 'development'
     config.fog_directory ='pocketkarte-development'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/pocketkarte-development'
+  end
+end
