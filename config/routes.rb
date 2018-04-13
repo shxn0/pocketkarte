@@ -4,18 +4,25 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+
+
   resources :patient_backgrounds
+
   resources :medicines do
     collection do
       post :confirm
     end
   end
+
   resources :allergies
+
   resources :past_medical_histories
+  
   resources :symptoms
 
   root "top#index"
-  get 'landing', to: 'top#landing'
+  get 'landing' => 'top#landing'
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')} / do
     resources :posts, params: :slug
