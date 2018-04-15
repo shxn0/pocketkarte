@@ -23,7 +23,7 @@ class MedicinesController < ApplicationController
   end
 
   def create
-    #etrieve_from_cache!メソッドでキャッシュから画像を復元して保存する
+    # retrieve_from_cache!メソッドでキャッシュから画像を復元して保存する
     # params[:cache] => {"medicine_img"=>"1521100613-68352-0005-4586/moguo.jpg"}が格納されている
     @medicine = current_user.medicines.build(medicine_params)
     @medicine.medicine_img.retrieve_from_cache! params[:cache][:medicine_img]
