@@ -101,7 +101,7 @@
             </div>
             <div class="row pull-right">
               <%= link_to "Back", root_path, class:"btn btn-default" %>
-              <%= link_to 'Delete', past_medical_history_path(@past_medical_history), method: :delete, data: { confirm: 'Are you sure to delete?'}, class: "btn btn-default" %>
+              <%= link_to 'Delete', past_medical_history_path(@past_medical_history), data: { confirm: 'Are you sure to delete?'}, class: "btn btn-default" %>
               <%= link_to 'Edit', edit_past_medical_history_path(@past_medical_history), class: "btn btn-info" %>
             </div>
         </div>
