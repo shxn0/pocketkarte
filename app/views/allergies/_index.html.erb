@@ -11,7 +11,7 @@
           	<li class="list-group-item">
               <i class="now-ui-icons education_atom">&emsp;<strong><%= allergy[:allergy_name] %></strong></i>
               <span class="text-right">
-                <%= link_to "", allergy_path(allergy), data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
+                <%= link_to "", allergy_path(allergy), method: :delete, data: {confirm:"Are you sure to delete?"}, class:"now-ui-icons ui-1_simple-remove" %></span>
               </span>
             </li>
           <% end %>
