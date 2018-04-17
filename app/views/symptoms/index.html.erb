@@ -71,7 +71,6 @@
                   <% key_name = @true_symptom_keys[i] %> <%# キーの配列の要素を取り出してkey_nameにtrueのキーのみを代入 %>
                   <% if  /^General./ =~ key_name %>
                     <% symptom = @symptom_attributes[key_name] %> <%# key_name変数をもとにハッシュの値を取得 %>
-                    <%# binding.pry %>
                     <tr>
                       <td>
                       <div class= "form-group" >
