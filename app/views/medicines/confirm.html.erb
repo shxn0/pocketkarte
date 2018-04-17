@@ -13,7 +13,12 @@
 
       <div class= "form-group">
         <div class="items_arrange">
-          <%= image_tag @medicine.medicine_img %>
+          <%#= image_tag @medicine.medicine_img.url %>
+
+
+          <%= image_tag @medicine.medicine_img.url.slice(63..-1) %>
+
+
         </div>
       </div>
 
@@ -23,7 +28,6 @@
         <%= f.hidden_field :user_id %>
         <%= hidden_field_tag :"cache[medicine_img]", @medicine.medicine_img.cache_name %>
         <%= f.submit "Register", class:'btn btn-info btn-md'%>
-
     <% end %>
 
     <%= form_for(@medicine, url: new_medicine_path, method:'get') do |f| %>
