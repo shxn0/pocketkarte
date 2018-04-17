@@ -22,7 +22,7 @@
     <div class= "form-group">
       <div class="items_arrange">
         <%= f.file_field :medicine_img, id: :medicine_img %>
-        <%= f.hidden_field :medicine_img_cache %>
+        <%= f.hidden_field :medicine_img_cache %> <%# 確認画面から新規作成画面に戻った時に情報を保持するための記述 %>
         <%= f.hidden_field :user_id %>
       </div>
     </div>
