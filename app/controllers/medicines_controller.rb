@@ -19,6 +19,7 @@ class MedicinesController < ApplicationController
 
   def confirm
     @medicine = current_user.medicines.build(medicine_params)
+    img_comfirm_path
     render :new if @medicine.invalid?
   end
 
