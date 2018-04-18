@@ -15,8 +15,7 @@
         <div class="items_arrange">
           <%# 確認画面で画像が表示されるようにHelperで作成したimg_comfirm_pathメソッドを参照してパスを指定する #>
           <%#= image_tag @medicine.medicine_img.url を実行するとS3への画像パスが参照されてしまう %>
-          <%#= image_tag img_comfirm_path %>
-          <%= image_tag @medicine.medicine_img.url.slice(62..-1) %>
+          <%= image_tag img_comfirm_path %>
         </div>
       </div>
 
