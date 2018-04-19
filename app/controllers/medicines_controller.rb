@@ -40,9 +40,13 @@ class MedicinesController < ApplicationController
   end
 
   def destroy
+    @params = params[:_method]
+    @request_first = request.method
+    @request_second = request.request_method
     @medicine = Medicine.find(params[:id])
     @medicine.destroy
-    redirect_to medicines_path
+    # redirect_to medicines_path
+    render template: "top/index", locals: {para: @params, request_first: @request_first, request_second: @request_second}
   end
 
 
