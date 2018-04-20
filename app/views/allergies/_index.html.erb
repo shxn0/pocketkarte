@@ -13,7 +13,7 @@
               <span class="text-right">
                 <%# TODO: jQueryの読み込みに問題がありそうなので修正する %>
                 <%# link_to だとHTTPメソッドがGETになり削除できないのでbutton_toで対応 %>
-                <%= button_to "", allergy_path(allergy), method: :delete, class:"now-ui-icons ui-1_simple-remove" %></span>
+                <%= button_to "Delete", allergy_path(allergy), method: :delete, class:"now-ui-icons ui-1_simple-remove" %></span>
               </span>
             </li>
           <% end %>
