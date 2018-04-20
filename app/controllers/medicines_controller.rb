@@ -40,9 +40,6 @@ class MedicinesController < ApplicationController
   end
 
   def destroy
-    @params = params[:_method]
-    @request_first = request.method
-    @request_second = request.request_method
     @medicine = Medicine.find(params[:id])
     @medicine.destroy
     # redirect_to medicines_path
