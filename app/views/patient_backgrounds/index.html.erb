@@ -108,7 +108,9 @@
 
           <div class="row pull-right">
             <%= link_to "Back", root_path, class:"btn btn-default" %>
-            <%= link_to 'Delete', patient_background_path(@patient_background), method: :delete, data: { confirm: 'Are you sure to delete?'}, class: "btn btn-default" %>
+            <%# TODO: jQueryの読み込みに問題がありそうなので修正する %>
+            <%# link_to だとHTTPメソッドがGETになり削除できないのでbutton_toで対応 %>
+            <%= link_to 'Delete', patient_background_path(@patient_background), method: :delete, class: "btn btn-default" %>
             <%= link_to 'Edit', edit_patient_background_path(@patient_background), class: "btn btn-info" %>
           </div>
       </div> <!-- patient-background-info -->

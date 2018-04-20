@@ -18,7 +18,9 @@
         <div class="panel-footer">
           <strong><%= medicine[:medicine_name] %></strong>
           <span class="text-right">
-            <%= button_to "", medicine_path(medicine), method: :delete, class:"now-ui-icons ui-1_simple-remove" %>
+            <%# TODO: jQueryの読み込みに問題がありそうなので修正する %>
+            <%# link_to だとHTTPメソッドがGETになり削除できないのでbutton_toで対応 %>
+            <%= button_to "Delete", medicine_path(medicine), method: :delete,  class:"now-ui-icons ui-1_simple-remove" %>
           </span>
       	</div>
       </div>
